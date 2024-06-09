@@ -1,13 +1,17 @@
+using Google.Protobuf;
 using System.Text.Json;
 using Common;
 using ServerCommon;
 using static Common.RockPaper;
+
 namespace Server;
+
 public partial class ServerHandler
 {
     private void OnPlayerAttackRequest(int packetHeaderInfo, ArraySegment<byte> buffer)
     {
-        var attackRequest = JsonSerializer.Deserialize<AttackRequest>(buffer);
+        var attackRequest = new AttackRequest.Parser.ParseFrom(buffer.Array, buffer.Offset, buffer.Count);
+        // var attackRequest = JsonSerializer.Deserialize<AttackRequest>(buffer);
         var gameRooms = RoomManager.Instance.GameRooms;
         var playerDic = SessionManager.Instance.GetUserDic();
         

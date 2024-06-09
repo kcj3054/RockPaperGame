@@ -134,6 +134,7 @@ public class GameManager : Singleton<GameManager>
                 {
                     if (sessionIdDic.TryGetValue(user.SessionId, out session))
                     {
+                        var joinGame = new JoinGamePacket
                         session.Send(new MakePacket().JoinGamePacket(CommonUserState.Player, gameRoom.RoomId, user.NickName));
                     }
                           

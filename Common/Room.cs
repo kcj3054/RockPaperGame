@@ -1,6 +1,5 @@
 namespace Common;
 
-
 public class Room
 {
     public ushort RoomId { get; set; }

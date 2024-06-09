@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package Common;
+
+enum CommonUserState
+{
+    UnKnow = 0,
+    Player = 1,
+    Spectator = 2,
+    Host = 3,
+    Ready = 4,
+}
+
+message PossibleGame {
+    uint32 roomId = 1;
+}
+
+message NewHost {
+    uint32 roomId = 1;
+}
+
+message Packet {
+    uint32 size = 1;
+    uint32 id = 2;
+}
+
+message VerifyIdRequest {
+    string nickName = 1;
+}
+
+message ReadyRequest {
+    int32 roomId = 1;
+    string readyState = 2;
+    string nickName = 3;
+}
+
+message NotifyReady {
+    uint32 roomId = 1;
+}
+
+message JoinGameRequest {
+    string nickName = 1;
+}
+
+message JoinGame {
+    CommonUserState state = 1;
+    uint32 roomId = 2;
+    string userName = 3;
+}
+
+message ReadyResponse {
+    bool readyResult = 1;
+}
+
+message EnterRoomRequest {
+    string nickName = 1;
+    int32 roomNumber = 2;
+}
+
+message EnterRoomResponse {
+    int32 roomNumber = 1;
+    CommonUserState userState = 2;
+}
+
+message EnterRoomToHostResponse {
+    int32 roomNumber = 1;
+    CommonUserState userState = 2;
+}
+
+message PossibleStartGame {
+    uint32 count = 1;
+    uint32 roomNumber = 2;
+}
+
+message StartGameRequest {
+    string result = 1;
+    uint32 userCount = 2;
+    uint32 roomNumber = 3;
+}
+
+message ExitRoomRequest {
+    int32 roomNumber = 1;
+    string name = 2;
+}
+
+message ExitPlayerRequest {
+    string playerName = 1;
+    int32 roomNumber = 2;
+}
+
+message VerifyIdResponse {
+    bool isOk = 1;
+}
+
+message AttackRequest {
+    string nickName = 1;
+    string value = 2;
+}
+
+message ShowRoomRequest {
+    string nickName = 1;
+}
+
+message ShowRoomResponse {
+    repeated Room roomInfo = 1;
+}
+
+message NotifyResultGame {
+    uint32 result = 1;
+}
+
+message NotifyResultGameToSpectator {
+    map<string, uint32> userResult = 1;
+}

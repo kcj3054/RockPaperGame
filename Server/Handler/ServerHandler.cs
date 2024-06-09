@@ -260,6 +260,8 @@ public partial class ServerHandler : Singleton<ServerHandler>
         {
             if (member.UserState != HOST)
             {
+                var 
+
                 sessionIdDic.TryGetValue(member.SessionId, out Session? serverSession);
                 serverSession?.Send(new MakePacket().JoinGamePacket(CommonUserState.Player, member.RoomId, member.NickName));
             }
