@@ -19,15 +19,15 @@ public partial class ServerHandler : Singleton<ServerHandler>
 
     public void RegisterPacketHandler()
     {
-        _packetHandlers.Add((int)PacketId.EnterRoomRequest, OnEnterRoomRequest);
-        _packetHandlers.Add((int)PacketId.ReadyRequest, OnReadyRequest);
-        _packetHandlers.Add((int)PacketId.ShowRoomRequest, OnShowRoomRequest);
-        _packetHandlers.Add((int)PacketId.PlayerExitRequest, OnPlayerExitRequest); // client -> server 퇴장 요청 
-        _packetHandlers.Add((int)PacketId.AttackRequest, OnPlayerAttackRequest); // 플레이어가 가위 바위 보 중하나를 냄
-        _packetHandlers.Add((int)PacketId.VerifyPlayerRequest, OnVerifyPlayerId); //client -> server playerId 검증.. !
-        _packetHandlers.Add((int)PacketId.StartGameRequest, OnStartGameRequest);
-        _packetHandlers.Add((int)PacketId.PossibleGame, OnPossibleGame);
-       // _packetHandlers.Add((int)PacketId.ExitRoom, OnExitRoom); todo : 추가할까 말까.. 
+        _packetHandlers.Add((int)PacketID.EnterRoomRequest, OnEnterRoomRequest);
+        _packetHandlers.Add((int)PacketID.ReadyRequest, OnReadyRequest);
+        _packetHandlers.Add((int)PacketID.ShowRoomRequest, OnShowRoomRequest);
+        _packetHandlers.Add((int)PacketID.PlayerExitRequest, OnPlayerExitRequest); // client -> server 퇴장 요청 
+        _packetHandlers.Add((int)PacketID.AttackRequest, OnPlayerAttackRequest); // 플레이어가 가위 바위 보 중하나를 냄
+        _packetHandlers.Add((int)PacketID.VerifyPlayerRequest, OnVerifyPlayerId); //client -> server playerId 검증.. !
+        _packetHandlers.Add((int)PacketID.StartGameRequest, OnStartGameRequest);
+        _packetHandlers.Add((int)PacketID.PossibleGame, OnPossibleGame);
+       // _packetHandlers.Add((int)PacketID.ExitRoom, OnExitRoom); todo : 추가할까 말까.. 
     }
 
     public void Execute(int headerInfo, ArraySegment<byte> bytes, ServerSession session)

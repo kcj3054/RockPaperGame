@@ -1,6 +1,4 @@
-﻿//packet을 분리하자 client패킷을 client쪽으로... 
-//serverPacket을 server쪽으로 옮기자 s
-
+﻿
 namespace Common;
 
 public class PossibleGame

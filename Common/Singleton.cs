@@ -16,7 +16,3 @@ public class Singleton<T> where T : class, new()
         
     }
 }
-
-public enum SingletonEnum {
-    INSTANCE
-}

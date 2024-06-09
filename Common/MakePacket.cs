@@ -1,5 +1,5 @@
 using System.Text.Json;
-using static Common.PacketId;
+using static Common.PacketID;
 using static Common.CommonUserState;
 namespace Common;
 
@@ -10,7 +10,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = 4,
-            Id = (ushort)PacketId.NotifyWait,
+            Id = (ushort)PacketID.NotifyWait,
         };
         
         var buffer = BitConverter.GetBytes(packet.Size);
@@ -262,7 +262,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.StartGameRequest,
+            Id = (ushort)PacketID.StartGameRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -351,7 +351,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)NotifyNewhost,
+            Id = (ushort)NotifyNewHost,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -379,7 +379,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.PossibleGame,
+            Id = (ushort)PacketID.PossibleGame,
         };
         
         var buffer = BitConverter.GetBytes(packet.Size);
@@ -408,7 +408,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.AttackRequest,
+            Id = (ushort)PacketID.AttackRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -479,7 +479,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.ReadyResponse,
+            Id = (ushort)PacketID.ReadyResponse,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -507,7 +507,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.JoinGameRequest,
+            Id = (ushort)PacketID.JoinGameRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -541,7 +541,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = 4,
-            Id = (ushort)PacketId.ExitRoom,
+            Id = (ushort)PacketID.ExitRoom,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -570,7 +570,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.ReadyRequest,
+            Id = (ushort)PacketID.ReadyRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -598,7 +598,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.NotifyReady,
+            Id = (ushort)PacketID.NotifyReady,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -696,7 +696,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.EnterRoomResponse,
+            Id = (ushort)PacketID.EnterRoomResponse,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -725,7 +725,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.EnterRoomRequest,
+            Id = (ushort)PacketID.EnterRoomRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -755,7 +755,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.ShowRoomResponse,
+            Id = (ushort)PacketID.ShowRoomResponse,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);
@@ -784,7 +784,7 @@ public struct MakePacket
         Packet packet = new()
         {
             Size = (ushort)(bodySize + 4),
-            Id = (ushort)PacketId.ShowRoomRequest,
+            Id = (ushort)PacketID.ShowRoomRequest,
         };
         var buffer = BitConverter.GetBytes(packet.Size);
         var buffer2 = BitConverter.GetBytes(packet.Id);

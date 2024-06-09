@@ -99,7 +99,6 @@ public class Session
     
             //Array.Copy에 sourceIndex 0 수정하자
             Array.Copy(buffer.Array, sourceIndex, verifySegment.Array, verifySegment.Offset, size);
-            var id222 = BitConverter.ToUInt16(verifySegment.Array, verifySegment.Offset + 2);
             OnRecvPacket(verifySegment.Array);  // verifySegment가 아니라 verifySegment.Array를 보내보자  
            
             // 패킷아이디 410짜리가 두번 와있어서 2번 분리한다... 

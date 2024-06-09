@@ -11,7 +11,6 @@ public partial class ServerHandler
         if (showRoomRequest != null)
             Console.WriteLine($"{showRoomRequest.NickName}님이 룸 정보를 요청했습니다 ");
         
-        
 
         lock (_lock)
         {

@@ -2,7 +2,7 @@ using System.Text.Json;
 using Client.Service;
 using Common;
 using static Common.RoomNumber;
-using static Common.PacketId;
+using static Common.PacketID;
 using static Common.RockPaper;
 using static Common.Size;
 
@@ -19,14 +19,14 @@ public class ClientHandler : Singleton<ClientHandler>
     
     public void RegisterPacketHandler()
     {
-        _packetHandlers.Add((int)PacketId.EnterRoomResponse, OnPlayerEnterResponse);
+        _packetHandlers.Add((int)PacketID.EnterRoomResponse, OnPlayerEnterResponse);
         _packetHandlers.Add((int)NotifyGameStart, OnGameStart);
         _packetHandlers.Add((int)ExitPlayerResponse, OnPlayerExitRes); // 서버로부터 퇴장에대한 응답 패킷 
         _packetHandlers.Add((int)VerifyPlayerResponse, OnVerifyPlayerId);
         _packetHandlers.Add((int)NotifyGameRestart, OnGameReStart); // 게임 결과가 무승부일 경우 재시작 
         _packetHandlers.Add((int)NotifyGameResult, OnGameResult);
         _packetHandlers.Add((int)VictoryPlayerResponse, OnVictoryPlayer); // 상대방이 중도퇴실로인한 승리 
-        _packetHandlers.Add((int)PacketId.ShowRoomResponse, OnShowRoomResponse);
+        _packetHandlers.Add((int)PacketID.ShowRoomResponse, OnShowRoomResponse);
         _packetHandlers.Add((int)NotifyAttackAgain, OnAttackAgain);
         _packetHandlers.Add((int)NotifyGameResultToSpectatorResponse, OnGameSpectate);
         _packetHandlers.Add((int)NotifyPossibleGameStart, OnPossibleGameStart); // todo : 수정 중 
@@ -35,9 +35,9 @@ public class ClientHandler : Singleton<ClientHandler>
         _packetHandlers.Add((int)NotifyJoinGame, OnJoinGame); // 게임이 끝난 후 추후 게임 참가여부.. 
         _packetHandlers.Add((int)NotifyNotExist, OnNotExitRoomNumber);
         _packetHandlers.Add((int)NotifyExit, OnNotifyExit);
-        _packetHandlers.Add((int)PacketId.NotifyReady, OnReadyNotify);
+        _packetHandlers.Add((int)PacketID.NotifyReady, OnReadyNotify);
         _packetHandlers.Add((int)NotifyConvertState, OnConvertState);
-        _packetHandlers.Add((int)NotifyNewhost, OnNotifyNewHost); ////
+        _packetHandlers.Add((int)NotifyNewHost, OnNotifyNewHost); ////
         _packetHandlers.Add((int)NotifyAskAgainPossibleGameStart, OnAskAgainPossibleGameStart);
         
         _packetHandlers.Add((int)NotifyWait, OnNotifyWait);

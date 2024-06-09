@@ -1,56 +1,55 @@
-namespace Common;
-
-public enum PacketId
+namespace Common
 {
-    EnterRoomRequest = 1,
-    PlayerExitRequest = 3,
-    ResultRequest = 5,
-    VerifyPlayerRequest = 21,
-    
-    NotifyReady = 222,
-    ReadyResponse = 223,
-    ReadyRequest = 226,
-    
-    EnterRoomResponse = 2,
-    EnterHostResponse = 301,
-    
-    ExitPlayerResponse = 4,
-    NotifyGameStart = 6,
-    NotifyGameSpectate = 7,
-    
-    NotifyGameResultToSpectatorResponse = 100,
-    
-    NotifyGameResult = 101,
-    
-    VerifyPlayerResponse = 500,
-    VictoryPlayerResponse  = 511,
-    
-    NotifyGameRestart = 102,
-    
-    ShowRoomRequest = 200,
-    ShowRoomResponse = 201,
-    
-    AttackRequest = 202,
+    public enum PacketID
+    {
+        // 방 관련 요청 및 응답 패킷 (100-199)
+        EnterRoomRequest = 100,
+        EnterRoomResponse = 101,
+        EnterHostResponse = 102,
+        ExitRoom = 103,
 
-    NotifyAttackAgain = 241,
-    
-    NotifyPossibleGameStart = 300,
-    NotifyAskAgainPossibleGameStart = 333,
-    NotifyWait = 334,
-    StartGameRequest =400,
-    
-    NotifyLooser = 401,
-    NotifyJoinGame = 402,
-    JoinGameRequest = 403,
-    JOIN_GAME_TO_HOST = 404,
-    NotifyExit = 405,
-    
-    NotifyNotExist = 407,
-    NotifyConvertState = 408,
-    NotifyNewhost = 410,
-    PossibleGame = 411,
-    
-    ExitRoom = 500,
+        // 플레이어 관련 요청 및 응답 패킷 (200-299)
+        PlayerExitRequest = 200,
+        VerifyPlayerRequest = 201,
+        VerifyPlayerResponse = 202,
+        VictoryPlayerResponse = 203,
+
+        // 게임 관련 알림 및 요청 패킷 (300-399)
+        NotifyGameStart = 300,
+        NotifyGameSpectate = 301,
+        NotifyGameResultToSpectatorResponse = 302,
+        NotifyGameResult = 303,
+        NotifyGameRestart = 304,
+        StartGameRequest = 305,
+
+        // 준비 관련 알림 및 요청 패킷 (400-499)
+        NotifyReady = 400,
+        ReadyResponse = 401,
+        ReadyRequest = 402,
+
+        // 방 표시 관련 요청 및 응답 패킷 (500-599)
+        ShowRoomRequest = 500,
+        ShowRoomResponse = 501,
+
+        // 공격 관련 요청 및 알림 패킷 (600-699)
+        AttackRequest = 600,
+        NotifyAttackAgain = 601,
+
+        // 게임 상태 알림 패킷 (700-799)
+        NotifyPossibleGameStart = 700,
+        NotifyAskAgainPossibleGameStart = 701,
+        NotifyWait = 702,
+        NotifyLooser = 703,
+        NotifyJoinGame = 704,
+        JoinGameRequest = 705,
+        JoinGameToHost = 706,
+        NotifyExit = 707,
+        NotifyNotExist = 708,
+        NotifyConvertState = 709,
+        NotifyNewHost = 710,
+        PossibleGame = 711,
+
+        // 경기 결과 패킷 (900-999)
+        ResultRequest = 900
+    }
 }
-
-

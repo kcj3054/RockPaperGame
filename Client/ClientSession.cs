@@ -12,8 +12,7 @@ public class ClientSession : Session
     {
         if(buffer.Array == null)
             return;
-        
-        //사용했던 패킷이 재활용되고있다...?...
+
         lock (_lock)
         {
             var id = BitConverter.ToUInt16(buffer.Array, buffer.Offset + 2);
