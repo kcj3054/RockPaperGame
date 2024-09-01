@@ -1,19 +1,64 @@
 ## 설명
 
-- 초기에 supersocket과 같은 framework를 사용하지 않고 학습을 위해 c# 기본 socket을 사용하지 않으면서 방 게임을 만들었습니다.
-
 - 단순 방을 생성 후 1 : 1 대전이 아닌 m : n 대전이 가능하며, 관전자가 다음 게임에 참가하여 함께 게임을 즐길 수 있습니다.
+
+### APIServer
+
+[APIServer](./APIServer)
+
+
+- asp.net core를 이용한 api server
+
+- Login 인증 기능
+
+- 우편 기능 
+
+- 일반적으로 로그인서버, 로비서버라고도 부른다.
+
+### GateWayServer
+
+[GateWayServer](./GatewayServer)
+
+- 프록시 서버로 중간 매개인 gatewayserver를 생성했습니다.
+
+- 기능으로는 추후에 암호화기능을 추가할 예정 
+
+- 현재는 supersocket 기반으로 구현되어있습니다.
+
+- 직렬화 기능으로는 MessagePack을 사용
+
+### GameServer
+
+[GameServer](./GameServer)
+
+- c# socket을 이용하여 구현 
+
+- 다중 가위 바위 보 게임을 진행하는 게임서버 
+
+- 직렬화 기능으로는 protobuf를 사용 
+
+## DBSchema
+
+- [DB 문서 ](./APIServer/SCHEMA.md)
+  - USER, ACCOUNT, MAIL, MAIL_REWARD.. 
+
+- REPOSITORY를 옮기면서 초기 스키마가 손실 되어 추가 작성 중  
 
 ## 기술 
 
 - c# 
+  - .net core 8.0
 
 - protobuf
+  - GameServer 직렬화용으로 사용 
+- MessagePack
+  - GatewayServer에서 사용 
 
 - Mysql
-
+  - RDBMS로 MYSQL을 사용하고 Dapper를 사용 함 
+  - 현재 에드 훅 쿼리로 작성 중인 것을 Stored Procedure로 변경 작업 중 
 - Redis
-
+  
 ## 기능
 
 - [x] 로그인 기능 
@@ -24,6 +69,10 @@
 - [x] 관전자 기능
 
 - [x] n : m 대전 
+
+- [x] 우편 기능
+  - [x] 우편 삭제 
+  - [x] 전체 우편 조회
 
 - [ ] Timer를 이용한 가위, 바위, 보 공격 시간 제한 
 
@@ -36,7 +85,8 @@
 - [ ] 패킷 암호화
   - 공개키 암호화 c# 라이브러리 (System.Security.Cryptography 사용 예정)
 
-- [ ] 중개 서버 추가
+- [x] 중개 서버 
+- 4추가
   - 패킷 릴레이, 암호화, 하트비트 체크 
 
 
