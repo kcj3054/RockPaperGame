@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "d+991571tzUSsN/FB2+NJypfLP/mrz08JEUmOPxl+BbfZzLhqtvh1UCpKrm1MlVVpPZVCuHg1jwwIdN8CdQ0Kg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\madesystem\\RiderProjects\\GameServer\\ServerCommon\\ServerCommon.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\madesystem\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\madesystem\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\madesystem\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,4 @@
+C:\Users\madesystem\RiderProjects\GameServer\GameServer\obj\Debug\net7.0\GameServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\madesystem\RiderProjects\GameServer\GameServer\obj\Debug\net7.0\GameServer.AssemblyInfoInputs.cache
+C:\Users\madesystem\RiderProjects\GameServer\GameServer\obj\Debug\net7.0\GameServer.AssemblyInfo.cs
+C:\Users\madesystem\RiderProjects\GameServer\GameServer\obj\Debug\net7.0\GameServer.csproj.CoreCompileInputs.cache

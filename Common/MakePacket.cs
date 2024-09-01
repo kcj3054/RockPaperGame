@@ -8,7 +8,7 @@ namespace Common
 
     public struct MakePacket
     {
-        public CommonUserState Host { get; private set; }
+        public UserState Host { get; private set; }
 
         public ArraySegment<byte> NotifyWait()
         {
@@ -112,7 +112,7 @@ namespace Common
             return segment;
         }
 
-        public ArraySegment<byte> JoinGamePacket(CommonUserState state, ushort roomId, string name)
+        public ArraySegment<byte> JoinGamePacket(UserState state, ushort roomId, string name)
         {
             JoinGame joinGame = new()
             {
@@ -675,18 +675,18 @@ namespace Common
             if (room == -1)
                 room = 1;
 
-            CommonUserState commonState = new();
+            UserState commonState = new();
             //todo : 수정 ! 
             switch (userState)
             {
                 case var state when state == 8:
-                    commonState = Ready;
+                    commonState = UserState.Ready;
                     break;
                 case var state when state == 7:
                     commonState = Host;
                     break;
                 case var state when state == 6:
-                    commonState = Spectator;
+                    commonState = UserState.Spectator;
                     break;
             }
 

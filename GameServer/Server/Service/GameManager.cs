@@ -1,9 +1,8 @@
 using System.Runtime.CompilerServices;
 using Common;
 using Server;
-using ServerCommon;
 using static Common.RoomNumber;
-using static ServerCommon.UserState;
+using static Common.UserState;
 using static Common.RockPaper;
 
 namespace Server.Service;

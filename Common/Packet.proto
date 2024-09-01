@@ -2,13 +2,13 @@ syntax = "proto3";
 
 package Common;
 
-enum CommonUserState
+enum UserState
 {
-    UnKnow = 0,
-    Player = 1,
-    Spectator = 2,
-    Host = 3,
-    Ready = 4,
+    UnKnow = 0;
+    Player = 1;
+    Spectator = 2;
+    Host = 3;
+    Ready = 4;
 }
 
 message PossibleGame {
@@ -43,7 +43,7 @@ message JoinGameRequest {
 }
 
 message JoinGame {
-    CommonUserState state = 1;
+    UserState state = 1;
     uint32 roomId = 2;
     string userName = 3;
 }
@@ -59,12 +59,12 @@ message EnterRoomRequest {
 
 message EnterRoomResponse {
     int32 roomNumber = 1;
-    CommonUserState userState = 2;
+    UserState userState = 2;
 }
 
 message EnterRoomToHostResponse {
     int32 roomNumber = 1;
-    CommonUserState userState = 2;
+    UserState userState = 2;
 }
 
 message PossibleStartGame {
@@ -102,7 +102,7 @@ message ShowRoomRequest {
 }
 
 message ShowRoomResponse {
-    repeated Room roomInfo = 1;
+    // repeated Room roomInfo = 1;
 }
 
 message NotifyResultGame {
